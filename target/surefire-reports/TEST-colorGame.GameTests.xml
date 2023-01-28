@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="colorGame.GameTests" time="0.287" tests="1" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
+    <property name="java.specification.version" value="11"/>
+    <property name="sun.cpu.isalist" value=""/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/utu/git/colorgame/target/test-classes:/home/utu/git/colorgame/target/classes:/home/utu/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.7.1/junit-jupiter-api-5.7.1.jar:/home/utu/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/utu/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/utu/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.7.1/junit-jupiter-engine-5.7.1.jar:/home/utu/.m2/repository/org/junit/platform/junit-platform-engine/1.7.1/junit-platform-engine-1.7.1.jar:/home/utu/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.7.1/junit-jupiter-params-5.7.1.jar:/home/utu/.m2/repository/org/junit/platform/junit-platform-commons/1.7.1/junit-platform-commons-1.7.1.jar:/home/utu/.m2/repository/net/jqwik/jqwik/1.5.0/jqwik-1.5.0.jar:/home/utu/.m2/repository/net/jqwik/jqwik-api/1.5.0/jqwik-api-1.5.0.jar:/home/utu/.m2/repository/net/jqwik/jqwik-web/1.5.0/jqwik-web-1.5.0.jar:/home/utu/.m2/repository/net/jqwik/jqwik-time/1.5.0/jqwik-time-1.5.0.jar:/home/utu/.m2/repository/net/jqwik/jqwik-engine/1.5.0/jqwik-engine-1.5.0.jar:"/>
+    <property name="java.vm.vendor" value="Debian"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="sun.font.fontmanager" value="sun.awt.X11FontManager"/>
+    <property name="java.vendor.url" value="https://tracker.debian.org/openjdk-11"/>
+    <property name="user.timezone" value="Europe/Helsinki"/>
+    <property name="java.vm.specification.version" value="11"/>
+    <property name="os.name" value="Linux"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="FI"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-11-openjdk-amd64/lib"/>
+    <property name="sun.java.command" value="/home/utu/git/colorgame/target/surefire/surefirebooter14029564632276797119.jar /home/utu/git/colorgame/target/surefire 2022-04-19T16-15-54_825-jvmRun1 surefire7256697570026289109tmp surefire_017625531806858111343tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/home/utu/git/colorgame/target/test-classes:/home/utu/git/colorgame/target/classes:/home/utu/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.7.1/junit-jupiter-api-5.7.1.jar:/home/utu/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/utu/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/utu/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.7.1/junit-jupiter-engine-5.7.1.jar:/home/utu/.m2/repository/org/junit/platform/junit-platform-engine/1.7.1/junit-platform-engine-1.7.1.jar:/home/utu/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.7.1/junit-jupiter-params-5.7.1.jar:/home/utu/.m2/repository/org/junit/platform/junit-platform-commons/1.7.1/junit-platform-commons-1.7.1.jar:/home/utu/.m2/repository/net/jqwik/jqwik/1.5.0/jqwik-1.5.0.jar:/home/utu/.m2/repository/net/jqwik/jqwik-api/1.5.0/jqwik-api-1.5.0.jar:/home/utu/.m2/repository/net/jqwik/jqwik-web/1.5.0/jqwik-web-1.5.0.jar:/home/utu/.m2/repository/net/jqwik/jqwik-time/1.5.0/jqwik-time-1.5.0.jar:/home/utu/.m2/repository/net/jqwik/jqwik-engine/1.5.0/jqwik-engine-1.5.0.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/utu"/>
+    <property name="user.language" value="fi"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2021-07-20"/>
+    <property name="java.home" value="/usr/lib/jvm/java-11-openjdk-amd64"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/home/utu/git/colorgame"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="surefire.real.class.path" value="/home/utu/git/colorgame/target/surefire/surefirebooter14029564632276797119.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="11.0.12+7-post-Debian-2"/>
+    <property name="user.name" value="utu"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="5.10.90"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="/home/utu/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugs.debian.org/openjdk-11"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="11.0.12"/>
+    <property name="user.dir" value="/home/utu/git/colorgame"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Debian"/>
+    <property name="java.vm.version" value="11.0.12+7-post-Debian-2"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="55.0"/>
+  </properties>
+  <testcase name="veikkauksenVaritTesti" classname="colorGame.GameTests" time="0.063"/>
+  <testcase name="veikkausJaTargetVertailu" classname="colorGame.GameTests" time="0.001"/>
+  <testcase name="veikkausJaTargetSama" classname="colorGame.GameTests" time="0.262">
+    <system-out><![CDATA[timestamp = 2022-04-19T16:15:56.001683, GameTests:veikkausJaTargetSama = 
+                              |-------------------jqwik-------------------
+tries = 1000                  | # of calls to property
+checks = 1000                 | # of not rejected calls
+generation = RANDOMIZED       | parameters are randomly generated
+after-failure = PREVIOUS_SEED | use the previous seed
+when-fixed-seed = ALLOW       | fixing the random seed is allowed
+edge-cases#mode = MIXIN       | edge cases are mixed in
+edge-cases#total = 0          | # of all combined edge cases
+edge-cases#tried = 0          | # of edge cases tried in current run
+seed = -3997079784193065221   | random seed to reproduce generated values
+
+
+]]></system-out>
+    <system-err><![CDATA[huhtik. 19, 2022 4:15:55 IP. net.jqwik.engine.execution.CheckedProperty maybeWarnOnMultipleTriesWithoutForallParameters
+WARNING: Running Property [GameTests:veikkausJaTargetSama] in container [colorGame.GameTests] without any @ForAll parameters for 1000 tries.
+    Maybe you want to change it into an @Example?
+]]></system-err>
+  </testcase>
+</testsuite>

@@ -1,0 +1,199 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!--
+     
+      Welcome!
+      This pom.xml is *THE* file that defines your Maven style Java project.
+      
+      Eclipse, IDEA and other development environments with Maven support
+      or plugins can *import* this project by reading this file.
+      
+      It usually contains tons of barely readable configuration. Luckily
+      this basic pom.xml is somewhat readable. All necessary configuration
+      for customizing your project if located here on top before the
+      'END OF SIMPLE CONFIGURATION' line below.
+      
+    -->
+    
+    <!-- ==== START OF SIMPLE CONFIGURATION ==== -->
+    
+    <!-- The three parts of the artifact name -->
+    <groupId>fi.utu.tech</groupId>
+    <artifactId>example-unittest</artifactId>
+    <version>1.2.0</version>
+    
+    <!-- Additional information about the project -->
+    <name>Example code for testing</name>
+    <url>https://gitlab.utu.fi/tech/education/oom/example-unittest</url>
+
+    <!-- We want to generate a jar. Don't change. -->
+    <packaging>jar</packaging>
+
+    <properties>
+        <!-- Configures the main class for this project (i.e. what to launch) -->
+        <project.mainclass>fi.utu.tech.Main</project.mainclass>
+
+        <!-- The source encoding should always be utf-8. Don't change. -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- Version numbers for various modules -->
+        <jdk.version>11</jdk.version>
+        <jqwik.version>1.5.0</jqwik.version>
+        <junit.version>5.7.1</junit.version>
+        <junitplatform.version>1.7.1</junitplatform.version>
+    </properties>
+
+    <!-- ==== END OF SIMPLE CONFIGURATION ==== -->
+    
+    <repositories>
+        <!-- https://search.maven.org/ -->
+        <repository>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <id>central</id>
+            <name>Central Repository</name>
+            <url>https://repo.maven.apache.org/maven2</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-commons</artifactId>
+            <version>${junitplatform.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.jqwik</groupId>
+            <artifactId>jqwik</artifactId>
+            <version>${jqwik.version}</version>
+            <scope>test</scope>
+        </dependency><!--
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-migrationsupport</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-runner</artifactId>
+            <version>${junitplatform.version}</version>
+            <scope>test</scope>
+        </dependency> -->
+    </dependencies>
+  
+    <build>
+        <plugins>
+        
+            <!-- Run this app with exec:java -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.6.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <mainClass>${project.mainclass}</mainClass>
+                </configuration>
+            </plugin>
+            
+            <!-- Make the packaged jar executable -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.1.2</version>
+                <configuration>
+                  <!-- DO NOT include log4j.properties file in your Jar -->
+                  <excludes>
+                    <exclude>**/log4j.properties</exclude>
+                  </excludes>
+                  <archive>
+                    <manifest>
+                        <!-- Jar file entry point -->
+                        <mainClass>${project.mainclass}</mainClass>
+                    </manifest>
+                  </archive>
+                </configuration>
+            </plugin>
+            
+            <!-- JDK source/target versions -->
+            <plugin>    
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <compilerArgument>-Xlint:unchecked</compilerArgument>
+                    <source>${jdk.version}</source>
+                    <target>${jdk.version}</target>
+                </configuration>
+            </plugin>
+
+            <!-- Also create a jar of the sources -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            
+            <!-- JUnit & JQwik test integration -->
+
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M5</version>
+            </plugin>
+            <plugin>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>3.0.0-M5</version>
+            </plugin>
+
+			<plugin>
+  				<groupId>org.apache.maven.plugins</groupId>
+  				<artifactId>maven-javadoc-plugin</artifactId>
+  				<version>3.1.1</version>
+  				<executions>
+    				<execution>
+    				<id>attach-javadocs</id>
+    				<goals>
+      					<goal>jar</goal>
+    				</goals>
+    				</execution>
+  				</executions>
+			</plugin>
+        </plugins>
+    </build>
+</project>
